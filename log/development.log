@@ -708,3 +708,604 @@ Processing by BlogController#index as HTML
 Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.1ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /usr/local/lib/ruby/gems/2.6.0/gems/activesupport-5.2.8/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:17:34 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8/lib/active_record/log_subscriber.rb:98
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (12.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 315ms (Views: 299.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:17:48 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (19.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 31.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/rails/db" for 136.152.143.0 at 2022-06-23 20:18:26 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::DashboardController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application (2.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_header.html.erb (9.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_sidebar.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_gems.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_footer.html.erb (46.4ms)
+Completed 200 OK in 263ms (Views: 249.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/db/tables/posts/data" for 136.152.143.0 at 2022-06-23 20:18:33 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"posts"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8/lib/active_record/log_subscriber.rb:98
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_exp_col.html.erb (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_condition_fields.html.erb (119.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_condition_fields.html.erb (69.0ms)
+  [1m[36m Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_row.html.erb (3.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_row.html.erb (6.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_sql.html.erb (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_data.html.erb (321.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/data.js.erb (330.1ms)
+Completed 200 OK in 543ms (Views: 343.6ms | ActiveRecord: 56.1ms)
+
+
+Started GET "/rails/db/tables/" for 136.152.143.0 at 2022-06-23 20:46:35 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/index.html.erb within layouts/rails_db/application
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/index.html.erb within layouts/rails_db/application (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_header.html.erb (12.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_sidebar.html.erb (7.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_gems.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_footer.html.erb (134.1ms)
+Completed 200 OK in 345ms (Views: 336.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:46:43 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (30.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 72.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/update/2" for 136.152.143.0 at 2022-06-23 20:46:44 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/update/2"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:46:51 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (1.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:47:01 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (1.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/update/2" for 136.152.143.0 at 2022-06-23 20:47:02 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/update/2"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:47:05 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (4.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/update/2" for 136.152.143.0 at 2022-06-23 20:47:52 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/update/2"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:47:54 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (1.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 89.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/update/2" for 136.152.143.0 at 2022-06-23 20:48:34 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/update/2"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:48:36 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (57.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:48:38 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (1.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 103.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/update/1" for 136.152.143.0 at 2022-06-23 20:48:39 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/update/1"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:48:42 +0000
+Cannot render console from 10.2.0.188! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (1.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 83.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/update/1" for 136.152.143.0 at 2022-06-23 20:50:13 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/update/1"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/update/1" for 136.152.143.0 at 2022-06-23 20:51:47 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/update/1"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/rails/db/tables/posts/data" for 136.152.143.0 at 2022-06-23 20:52:03 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"posts"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8/lib/active_record/log_subscriber.rb:98
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/shared/_exp_col.html.erb (50.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_condition_fields.html.erb (10.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_condition_fields.html.erb (9.9ms)
+  [1m[36m Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_row.html.erb (58.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_row.html.erb (3.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_sql.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/_data.html.erb (287.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/rails_db-2.4.1/app/views/rails_db/tables/data.js.erb (301.9ms)
+Completed 200 OK in 502ms (Views: 323.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/r" for 136.152.143.0 at 2022-06-23 20:52:07 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/r"):
+  
+actionpack (5.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (5.2.8) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:52:18 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (13.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/update/1" for 136.152.143.0 at 2022-06-23 20:53:12 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#update as HTML
+  Parameters: {"postId"=>"1"}
+Completed 404 Not Found in 16ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/blog_controller.rb:16:in `update'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:53:18 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (7.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/update/1" for 136.152.143.0 at 2022-06-23 20:53:49 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#update as HTML
+  Parameters: {"postId"=>"1"}
+Completed 404 Not Found in 12ms (ActiveRecord: 5.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/blog_controller.rb:16:in `update'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:53:52 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (14.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/update/1" for 136.152.143.0 at 2022-06-23 20:54:06 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#update as HTML
+  Parameters: {"postId"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:16
+  Rendering blog/update.erb within layouts/application
+  Rendered blog/update.erb within layouts/application (1411.0ms)
+Completed 500 Internal Server Error in 1493ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x0000562ff74e5458>:0x0000562ff7522380>
+Did you mean?  @post):
+    3: 	<input type = "text" name="title" value ="<%=@post.title%>">
+    4: 	<br/>
+    5: 	<p>contents</p>
+    6: 	<input type = "text" name = "description" value = "<%=post.description%>">
+    7: 	<button type = "submit">Submit</button>
+    8: </form>
+  
+app/views/blog/update.erb:6:in `_app_views_blog_update_erb___3653376240822863644_47382006222660'
+Started GET "/" for 136.152.143.0 at 2022-06-23 20:55:12 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (4.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (5.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 17.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/update/1" for 136.152.143.0 at 2022-06-23 20:55:14 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#update as HTML
+  Parameters: {"postId"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:16
+  Rendering blog/update.erb within layouts/application
+  Rendered blog/update.erb within layouts/application (0.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/update/1" for 136.152.143.0 at 2022-06-23 21:02:09 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#update as HTML
+  Parameters: {"postId"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:16
+  Rendering blog/update.erb within layouts/application
+  Rendered blog/update.erb within layouts/application (0.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 10.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/updateAction" for 136.152.143.0 at 2022-06-23 21:02:16 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#updateAction as HTML
+  Parameters: {"title"=>"123", "description"=>"123", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/blog_controller.rb:24
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "123"], ["description", "123"], ["updated_at", "2022-06-23 21:02:16.531838"], ["id", 1]]
+  ↳ app/controllers/blog_controller.rb:24
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/blog_controller.rb:24
+Redirected to http://learnrubyonrails-rchdn.run-us-west2.goorm.io/
+Completed 302 Found in 25ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/" for 136.152.143.0 at 2022-06-23 21:02:16 +0000
+Cannot render console from 10.2.1.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BlogController#index as HTML
+  Rendering blog/index.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/blog/index.erb:1
+  Rendered blog/index.erb within layouts/application (1.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
